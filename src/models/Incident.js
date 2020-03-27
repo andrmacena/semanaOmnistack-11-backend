@@ -5,13 +5,13 @@ class Incident extends Model {
       super.init({
          title: DataTypes.STRING,
          description: DataTypes.STRING,
-         description: DataTypes.FLOAT,
+         value: DataTypes.DECIMAL(10, 2),
       }, { sequelize: connection })
    }
-       //criando relacionamento entre os modelos
-       static associate(models) {
-         this.belongsTo(models.Ong, { foreignKey: 'ong_id', as: 'owner' })
-      }
+   //criando relacionamento entre os modelos
+   static associate(models) {
+      this.belongsTo(models.Ong, { foreignKey: 'ong_id', as: 'ong' })
+   }
 }
 
 module.exports = Incident
