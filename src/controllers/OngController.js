@@ -17,7 +17,7 @@ module.exports = {
 
       await Ong.create({ id, name, email, whatsapp, city, uf })
 
-      return res.json('Cadastro efetuado! Seu id é: ' + id)
+      return res.json(id)
 
    },
 }
