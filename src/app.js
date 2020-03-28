@@ -1,6 +1,7 @@
+require('dotenv').config()
+
 const express = require('express')
 const cors = require('cors')
-
 
 const OngRoutes = require('./routes/OngRoutes')
 const IncidentRoutes = require('./routes/IncidentRoutes')
@@ -21,4 +22,4 @@ app.use(SessionRoutes)
 
 require('./database')
 
-app.listen(3333)
+app.listen(process.env.PORT || 3333)
