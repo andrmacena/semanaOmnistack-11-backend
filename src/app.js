@@ -10,9 +10,7 @@ const SessionRoutes = require('./routes/SessionRoutes')
 
 const app = express()
 
-app.use(cors({
-   //origin: 'meufrontend.com.br'
-}))
+app.use(cors())
 app.use(express.json())
 
 app.use(OngRoutes)
