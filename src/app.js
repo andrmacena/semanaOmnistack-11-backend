@@ -2,6 +2,7 @@ require('dotenv').config()
 
 const express = require('express')
 const cors = require('cors')
+const { errors } = require('celebrate')
 
 const OngRoutes = require('./routes/OngRoutes')
 const IncidentRoutes = require('./routes/IncidentRoutes')
@@ -17,6 +18,8 @@ app.use(OngRoutes)
 app.use(IncidentRoutes)
 app.use(ProfileRoutes)
 app.use(SessionRoutes)
+
+app.use(errors())
 
 require('./database')
 
