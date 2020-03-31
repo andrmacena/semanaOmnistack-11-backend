@@ -31,6 +31,11 @@ Be the Hero
 
 <br>
 
+## Deploy
+
+This project is live on Heroku, to access go to 
+
+https://bethehero-backend-11.herokuapp.com/
 
 ## Technologies
 
