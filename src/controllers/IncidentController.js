@@ -45,7 +45,11 @@ module.exports = {
       const { id } = req.params
       const ong_id = req.headers.authorization
 
-      const incident = await Incident.findOne({ attributes: ['ong_id'] }, { where: { id } })
+      console.log('id', id)
+
+      const incident = await Incident.findOne({ where: { id } })
+
+      console.log(incident.ong_id)
 
       if (incident.ong_id !== ong_id) {
          return res.status(401).json({ error: 'Access denied' })
