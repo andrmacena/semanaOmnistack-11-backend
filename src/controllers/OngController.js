@@ -2,6 +2,8 @@ const crypto = require('crypto')
 
 const Ong = require('../models/Ong')
 
+const emailService = require('../services/emailService')
+
 module.exports = {
 
    async getOng(req, res, next) {
@@ -15,9 +17,18 @@ module.exports = {
 
       const id = crypto.randomBytes(4).toString('HEX')
 
-      await Ong.create({ id, name, email, whatsapp, city, uf })
+      try {
 
-      return res.json(id)
+         await Ong.create({ id, name, email, whatsapp, city, uf })
 
-   },
+         emailService.sendEmail(email, "Bem vindo ao Be The Hero!", global.EMAIL_TMPL.replace('{0}', id))
+
+         return res.json(id)
+
+      } catch (error) {
+
+         res.send({ message: error })
+
+      }
+   }
 }
