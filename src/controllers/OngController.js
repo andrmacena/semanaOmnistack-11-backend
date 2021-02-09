@@ -13,13 +13,13 @@ module.exports = {
 
    },
    async createOng(req, res, next) {
-      const { name, email, whatsapp, city, uf } = req.body
+      const { name, email, whatsapp, city, uf, about_me } = req.body
 
       const id = crypto.randomBytes(4).toString('HEX')
 
       try {
 
-         await Ong.create({ id, name, email, whatsapp, city, uf })
+         await Ong.create({ id, name, email, whatsapp, city, uf, about_me })
 
          emailService.sendEmail(email, "Bem vindo ao Be The Hero!", global.EMAIL_TMPL.replace('{0}', id))
 
