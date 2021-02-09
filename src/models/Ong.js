@@ -8,6 +8,7 @@ class Ong extends Model {
          whatsapp: DataTypes.STRING,
          city: DataTypes.STRING,
          uf: DataTypes.STRING,
+         about_me: DataTypes.STRING
       }, { sequelize: connection })
    }
 }
