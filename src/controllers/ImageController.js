@@ -46,15 +46,11 @@ module.exports = {
 
    },
    async getImages(req, res, next) {
-      const { page = 1 } = req.query
       const ong_id = req.headers.authorization
 
-      console.log(ong_id)
-
-      const count = await Image.count()
+      const count = await Image.count({ where: { ong_id } })
 
       const images = await Image.findAll({
-         offset: ((page - 1) * 5), limit: 5,
          attributes: ['id', 'url_image', 'description', 'ong_id'],
          include: [{
             attributes: ['name', 'email', 'whatsapp', 'city', 'uf'],
