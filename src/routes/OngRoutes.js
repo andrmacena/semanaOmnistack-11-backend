@@ -27,9 +27,8 @@ routes.post('/ongs/addImage', celebrate({
       url_image: Joi.string().required(),
       description: Joi.string().required()
    })
-}),
+}),controllerImage.createImage)
 
-   controllerImage.createImage)
 routes.get('/ongs/images', controllerImage.getImages)
 
 module.exports = routes
