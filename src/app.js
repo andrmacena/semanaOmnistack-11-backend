@@ -8,6 +8,7 @@ const OngRoutes = require('./routes/OngRoutes')
 const IncidentRoutes = require('./routes/IncidentRoutes')
 const ProfileRoutes = require('./routes/ProfileRoutes')
 const SessionRoutes = require('./routes/SessionRoutes')
+const ReSendEmailRoutes = require('./routes/ReSendEmailRoutes')
 
 const app = express()
 
@@ -18,6 +19,7 @@ app.use(OngRoutes)
 app.use(IncidentRoutes)
 app.use(ProfileRoutes)
 app.use(SessionRoutes)
+app.use(ReSendEmailRoutes)
 
 app.use(errors())
 
