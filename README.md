@@ -47,7 +47,7 @@ This project was developed with the following technologies:
 
 ## 🎯 Project
 
-en-es<br/>
+en-us<br/>
 This project is inspired on "Be The Hero" who was developed during Omnistack week given by [Rocketseat](https://rocketseat.com.br/), that aims to connect people who are willing to help NOGs. This project comes to facilitate the contact of people interested in helping NGO cases, where we have NGOs on the one hand providing cases that need help and on the other hand people taking cases and helping in some way (money, food).
 
 pt-br<br/>
